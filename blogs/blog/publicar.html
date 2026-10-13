@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="icon" href="/logo.svg"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Publicar | Blog</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/blog/blog.css"></head><body>
+<main class="aw">
+
+<section id="gate" class="ac" style="max-width:460px;margin:40px auto 0">
+  <h2>Área do blog</h2>
+  <p style="margin-bottom:18px;font-weight:600">Digite a senha para publicar, editar ou apagar posts.</p>
+  <form id="gf"><label class="fld"><span>Senha</span><input id="pw" type="password" autocomplete="current-password" required></label>
+  <button class="btn or" id="gb">Entrar</button></form>
+</section>
+
+<div id="panel" hidden>
+  <div id="vList">
+    <div class="bar"><h1>Posts</h1><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn or" id="newPost">+ Criar postagem</button><button class="btn gh sm" id="out" style="align-self:center">Sair</button></div></div>
+    <div class="ac" id="list"></div>
+  </div>
+
+  <div id="vEdit" hidden>
+    <div class="bar"><h1 id="eTitle">Nova postagem</h1><button class="btn gh sm" id="cancel">← Voltar</button></div>
+
+    <div class="bupcard">
+      <img class="bupav" src="/blog/bup.png" alt="Bup">
+      <div class="tx"><h3>Ajuda com Bup IA</h3><p>Ajude a criar seu post com a IA do Bup.</p></div>
+      <button class="btn" id="bupOpen" type="button">Chamar o Bup</button>
+    </div>
+
+    <div class="ac">
+      <label class="fld"><span>Título da postagem</span><input id="fTitle" maxlength="140" placeholder="Ex: Meu novo projeto"></label>
+
+      <div class="fld"><span>Imagem principal da postagem</span><div id="coverBox"></div></div>
+
+      <label class="fld"><span>Texto geral da postagem</span><textarea id="fBody" placeholder="Escreva aqui. Deixe uma linha em branco entre parágrafos."></textarea><small>Dica: comece uma linha com ## para criar um subtítulo.</small></label>
+
+      <div class="fld"><span>Imagens da postagem (até 5)</span><div id="galBox" class="thumbs"></div></div>
+    </div>
+
+    <div class="ac">
+      <h2 style="font-size:1.6rem">Mais informações</h2>
+      <label class="fld"><span>Resumo</span><input id="fSummary" maxlength="400" placeholder="Uma ou duas frases que aparecem no card do post"><span id="aiChip" class="bupchip" hidden><img src="/blog/bup.png" alt="">Resumo feito com Bup</span></label>
+      <div class="two">
+        <label class="fld"><span>Categoria</span><input id="fCat" maxlength="40" placeholder="Ex: Novidades"></label>
+        <label class="fld"><span>Autor</span><input id="fAuthor" maxlength="60" value="Miguel Fracassi"></label>
+      </div>
+      <div class="two">
+        <label class="fld"><span>Tags</span><input id="fTags" maxlength="200" placeholder="separadas por vírgula"></label>
+        <label class="fld"><span>Status</span><select id="fStatus"><option value="published">Publicado</option><option value="draft">Rascunho (só você vê)</option></select></label>
+      </div>
+    </div>
+
+    <div class="sav"><button class="btn or" id="save">Salvar postagem</button><button class="btn gh" id="cancel2" type="button">Cancelar</button></div>
+  </div>
+</div>
+</main>
+
+<div class="md" id="bupModal" hidden data-native-scroll>
+  <div class="mb2" role="dialog" aria-label="Bup IA">
+    <div class="mh"><img class="bupav bupav-sm" src="/blog/bup.png" alt=""><b>Bup IA</b><button class="x" id="bupClose" aria-label="Fechar">×</button></div>
+    <div class="log" id="bupLog"></div>
+    <div class="qr" id="bupQr"></div>
+    <form class="mf" id="bupForm"><input id="bupIn" autocomplete="off" aria-label="Sua resposta" placeholder="Escreva aqui"><button class="btn or sm" style="box-shadow:0 4px 0 #c77a00">Enviar</button></form>
+  </div>
+</div>
+
+<script src="/main.js"></script><script src="/blog/lib.js"></script><script src="/blog/publicar.js"></script></body></html>

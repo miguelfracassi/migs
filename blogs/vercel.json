@@ -1,0 +1,19 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/whatsapp", "destination": "https://wa.me/5519999894031", "permanent": false },
+    { "source": "/instagram", "destination": "https://instagram.com/migfracassi", "permanent": false },
+    { "source": "/ticord", "destination": "https://ticord.website", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "X-Frame-Options", "value": "DENY" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+    ]},
+    { "source": "/(.*)\\.(svg|css|js)", "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
+    ]}
+  ]
+}
